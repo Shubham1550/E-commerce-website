@@ -33,7 +33,7 @@ Users
                                 <td>{{$user->id}}</td>
                                 <td>{{$user->name}}</td>
                                 <td>{{$user->email}}</td>
-                                <td>{{$user->created_at->diffForHumans()}}</td>
+                                <td>{{$user->created_at}}</td>
                                 {{-- <td><span class="label label-success">Active</label></td> --}}
                                 <td>
                                     <button class="btn btn-sm btn-success ti-close" title="Block User"></button>

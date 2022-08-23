@@ -19,12 +19,16 @@
                 <li class="nav-item dropdown">
                     <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fa fa-user"></i> Account
+                        <i class="fa fa-user"></i>
+                        {{-- {{Auth::User()->name}} --}}
+                        Account
                     </a>
+
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="bd-versions">
                         <a class="dropdown-item " href="{{route('user.login.index')}}">Sign In</a>
                         <a class="dropdown-item" href="{{route('user.register.index')}}">Sign Up</a>
                     </div>
+
 
                 </li>
             </ul>

@@ -4,6 +4,7 @@ use App\Http\Controllers\front\CartController;
 use App\Http\Controllers\front\HomeController;
 use App\Http\Controllers\front\LoginController;
 use App\Http\Controllers\front\RegisterController;
+use App\Http\Controllers\front\UserProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
@@ -76,11 +77,13 @@ Route::post('/cart/store',[CartController::class,'store'])->name('cart.store');
 //login
 Route::get('/user/login',[LoginController::class,'login'])->name('user.login.index');
 Route::get('/user/login/store',[LoginController::class,'store'])->name('login.store');
-Route::get('/user/profile',[LoginController::class,'profile'])->name('profile.index');
+
 
 //register
 Route::get('/user/register',[RegisterController::class,'register'])->name('user.register.index');
 Route::post('/user/register/store',[RegisterController::class,'store'])->name('register.store');
 
-
-
+//profile
+Route::get('/user/profile',[UserProfileController::class,'index'])->name('profile.index');
+Route::get('/user/profile/details',[UserProfileController::class,'show'])->name('profile.details');
+Route::get('/user/profile/edit',[UserProfileController::class,'edit'])->name('profile.edit');

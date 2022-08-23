@@ -32,10 +32,7 @@ class LoginController extends Controller
         return redirect()->route('profile.index');
     }
 
-    public function profile()
-    {
-        return view('front.profile.index');
-    }
+
 
 
     // public function logout()
