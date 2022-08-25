@@ -77,7 +77,7 @@ Route::post('/cart/store',[CartController::class,'store'])->name('cart.store');
 //login
 Route::get('/user/login',[LoginController::class,'login'])->name('user.login.index');
 Route::get('/user/login/store',[LoginController::class,'store'])->name('login.store');
-
+Route::get('/user/logout',[LoginController::class,'logout'])->name('user.logout');
 
 //register
 Route::get('/user/register',[RegisterController::class,'register'])->name('user.register.index');
@@ -85,5 +85,7 @@ Route::post('/user/register/store',[RegisterController::class,'store'])->name('r
 
 //profile
 Route::get('/user/profile',[UserProfileController::class,'index'])->name('profile.index');
-Route::get('/user/profile/details',[UserProfileController::class,'show'])->name('profile.details');
+Route::get('/user/profile/details/',[UserProfileController::class,'show'])->name('profile.details');
 Route::get('/user/profile/edit',[UserProfileController::class,'edit'])->name('profile.edit');
+Route::post('/user/profile/store',[UserProfileController::class,'edit_profile_store'])->name('user.profile.store');
+

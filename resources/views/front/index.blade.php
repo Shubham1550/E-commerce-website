@@ -1,5 +1,10 @@
 @extends('front.layouts.master')
 @section('content')
+<br><br><br>
+@if (session()->has('msg'))
+    <div class="alert alert-success">{{session()->get('msg')}}</div>
+        {{-- .alert.alert-success{{session()->get('msg')}} --}}
+    @endif
 <!-- Jumbotron Header -->
     <header class="jumbotron my-4">
         <h5 class="display-3"><strong>Welcome,</strong></h5>
@@ -7,10 +12,7 @@
         <p class="display-4">&nbsp;</p>
         <a href="#" class="btn btn-warning btn-lg float-right">SHOP NOW!</a>
     </header>
-    @if (session()->has('msg'))
-    <div class="alert alert-success">{{session()->get('msg')}}</div>
-        {{-- .alert.alert-success{{session()->get('msg')}} --}}
-    @endif
+
 <div class="row text-center">
     @foreach ($product as $product)
 

@@ -7,7 +7,7 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th colspan="2">User Details <a href="" class="pullright">
+                <th colspan="2">User Details <a href="{{route('profile.edit')}}" class="pullright">
                         <i class="fa fa-cogs">Edit Profile</i></a>
                 </th>
             <tr>
@@ -88,7 +88,8 @@
                         @endif
                     </td>
                     <td>
-                        <a href="{{ url('/user/order') . '/' . $order->id }}" class="btn btn-outline-dark btn-sm">Details</a>
+
+                        <a href="{{Route('profile.details') . '/' . $order->id }}" class="btn btn-outline-dark btn-sm">Details</a>
                     </td>
             </tr>
             @endforeach
