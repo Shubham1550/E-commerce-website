@@ -89,7 +89,7 @@
                     </td>
                     <td>
 
-                        <a href="{{Route('profile.details') . '/' . $order->id }}" class="btn btn-outline-dark btn-sm">Details</a>
+                        <a href="{{url('/user/order') . '/' . $order->id }}" class="btn btn-outline-dark btn-sm">Details</a>
                     </td>
             </tr>
             @endforeach

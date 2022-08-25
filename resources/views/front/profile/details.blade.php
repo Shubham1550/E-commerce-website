@@ -1,6 +1,8 @@
 @extends('front.layouts.master')
 
 @section('content')
+
+<br><br><br>
     <h2>User Order Details Page</h2>
     <hr>
 
@@ -115,7 +117,7 @@
                             @foreach ($order->products as $product)
                                 <table class="table">
                                     <tr>
-                                        <td><img src="{{ url('uploads') . '/' . $product->image }}" alt=""
+                                        <td><img src="{{asset('uploads/'.@$order->products[0]->image)}}" alt=""
                                                  style="width: 2em"></td>
                                     </tr>
                                 </table>

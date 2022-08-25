@@ -18,10 +18,10 @@ class UserProfileController extends Controller
         return view('front.profile.index',compact(['user','orders']));
     }
 
-    public function show($id){
-        // $id = Auth::user()->id;
+    public function show($id)
+    {
         $order = Order::find($id);
-        Return view('front.profile.details',compact('order'));
+       return view('front.profile.details',compact('order'));
     }
 
     public function edit(){
@@ -31,10 +31,10 @@ class UserProfileController extends Controller
 
     public function edit_profile_store(Request $request){
         $request->validate([
-            'name'=>'nullable',
-            'email'=>'nullable',
-            'password'=>'nullable',
-            'address'=>'nullable'
+            'name'=>'required',
+            'email'=>'required',
+            'password'=>'required',
+            'address'=>'required'
         ]);
 
         $id = Auth::user()->id;

@@ -85,7 +85,7 @@ Route::post('/user/register/store',[RegisterController::class,'store'])->name('r
 
 //profile
 Route::get('/user/profile',[UserProfileController::class,'index'])->name('profile.index');
-Route::get('/user/profile/details/',[UserProfileController::class,'show'])->name('profile.details');
+Route::get('/user/order/{id}',[UserProfileController::class,'show'])->name('user.show');
 Route::get('/user/profile/edit',[UserProfileController::class,'edit'])->name('profile.edit');
 Route::post('/user/profile/store',[UserProfileController::class,'edit_profile_store'])->name('user.profile.store');
 
