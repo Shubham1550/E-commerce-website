@@ -1,5 +1,6 @@
 @extends('front.layouts.master')
 @section('content')
+    <br>
     <h2>Profile</h2>
     <hr>
     <h3>User Details</h3>
@@ -7,7 +8,7 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th colspan="2">User Details <a href="{{route('profile.edit')}}" class="pullright">
+                <th colspan="2">User Details <a href="{{ route('profile.edit') }}" class="pullright">
                         <i class="fa fa-cogs">Edit Profile</i></a>
                 </th>
             <tr>
@@ -35,10 +36,10 @@
     </table>
 
     <h2>Orders </h2>
-    <table class="table table-striped">
+    <table class="table table-bordered table-striped">
         <thead>
             <tr>
-                 <th>ID</th>
+                <th>ID</th>
                 <th>Product</th>
                 <th>Quantity</th>
                 <th>Total</th>
@@ -48,13 +49,13 @@
         </thead>
         <tbody>
             <tr>
-            @foreach ($user->order as $order)
+                @foreach ($user->order as $order)
                     <td>{{ $order->id }}</td>
                     <td>
                         @foreach ($order->products as $item)
                             <table class="table">
                                 <tr>
-                                    <td>{{ $item->name }}</td>
+                                    {{ $item->name }}
                                 </tr>
                             </table>
                         @endforeach
@@ -64,7 +65,7 @@
                         @foreach ($order->orderItems as $item)
                             <table class="table">
                                 <tr>
-                                    <td>{{ $item->quantity }}</td>
+                                    {{ $item->quantity }}
                                 </tr>
                             </table>
                         @endforeach
@@ -74,7 +75,7 @@
                         @foreach ($order->orderItems as $item)
                             <table class="table">
                                 <tr>
-                                    <td>RS{{ $item->price }}</td>
+                                    RS{{ $item->price }}
                                 </tr>
                             </table>
                         @endforeach
@@ -89,13 +90,14 @@
                     </td>
                     <td>
 
-                        <a href="{{url('/user/order') . '/' . $order->id }}" class="btn btn-outline-dark btn-sm">Details</a>
+                        <a href="{{ url('/user/order') . '/' . $order->id }}"
+                            class="btn btn-outline-dark btn-sm">Details</a>
                     </td>
             </tr>
             @endforeach
 
-                 </tr>
-            {{--  @dd($orders[0]->user);  --}}
+            </tr>
+            {{-- @dd($orders[0]->user); --}}
 
             {{-- @foreach ($products as $product)
                             <tr>

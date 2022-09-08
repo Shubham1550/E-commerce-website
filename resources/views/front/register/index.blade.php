@@ -4,7 +4,6 @@
     <div class="container" style="margin-top: 50px">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <br>
                 @if (\Session::has('msg'))
                 <div class="alert alert-success">
                     <ul>
@@ -23,7 +22,6 @@
                                 </ul>
                             </div>
                         @endif
-                        <br>
                         <h3 class="panel-title"><strong>Sign Up</strong></h3>
                     </div>
 
