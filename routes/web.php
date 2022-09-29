@@ -72,6 +72,13 @@ Route::get('/',[HomeController::class,'index'])->name('front.index');
 
 Route::get('/cart',[CartController::class,'index'])->name('cart.index');
 Route::post('/cart/store',[CartController::class,'store'])->name('cart.store');
+Route::patch('/cart/update/{id}', [CartController::class, 'update'])->name('cart.update');
+Route::get('/cart/empty',[CartController::class,'empty'])->name('cart.empty');
+Route::delete('/cart/destroy/{id}', [CartController::class, 'destroy'])->name('cart.destroy');
+Route::get('/cart/saveForLater/{id}', [CartController::class, 'saveForLater'])->name('cart.saveForLater');
+Route::delete('/saveForLater/destroy/{id}', [CartController::class, 'saveForLaterDestroy'])->name('cart.saveForLaterDestroy');
+Route::get('/cart/moveToCart/{id}', [CartController::class, 'moveToCart'])->name('cart.moveToCart');
+
 
 
 //login

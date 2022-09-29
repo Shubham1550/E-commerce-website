@@ -9,11 +9,9 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('cart.index')}}"><i class="fa fa-shopping-cart"></i> Cart
-                        <?php
-                        $product_count = App\Models\Cart::count();
-
-                        ?>
-                        (<strong>{{$product_count}}</strong>)
+                        @if(Cart::instance('default')->count() > 0)
+                        ({{Cart::instance('default')->count()}})
+                        @endif
                     </a>
                 </li>
                 <li class="nav-item dropdown">
